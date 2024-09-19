@@ -1,0 +1,36 @@
+Adott egy szám, határozzuk meg, hogy a Luhn-képlet szerint érvényes-e vagy sem.
+A Luhn-algoritmus egy egyszerű ellenőrzőösszeg-képlet, amelyet különböző azonosítószámok, például hitelkártyaszámok és kanadai társadalombiztosítási számok érvényesítésére használnak.
+
+A feladat annak ellenőrzése, hogy egy adott karakterlánc érvényes-e.
+
+Egy szám hitelesítése:
+Az 1 vagy annál rövidebb hosszúságú karakterláncok nem érvényesek. A bemenetben engedélyezettek a szóközök, de azokat az ellenőrzés előtt el kell távolítani. Minden más, nem számjegyes karakter nem megengedett.
+
+Példa 1: 
+érvényes hitelkártyaszám: 4539 3195 0343 6467
+
+A Luhn-algoritmus első lépése minden második számjegy megduplázása jobbról kezdve.
+
+4_3_ 3_9_ 0_4_ 6_6_
+
+Ha a szám megduplázása 9-nél nagyobb számot eredményez, akkor a szorzatból kivonjuk a 9-et. 
+A megduplázásunk eredménye:
+
+8569 6195 0383 3437
+
+Ezután összegezzük az összes számjegyet:
+
+8+5+6+9+6+1+9+5+0+3+8+3+3+4+3+7 = 80
+
+Ha az összeg osztható 10-zel, akkor a szám érvényes. Ez a szám érvényes!
+
+Példa 2: 
+érvénytelen hitelkártyaszám
+8273 1232 7352 0569
+Duplázza meg a második számjegyeket, jobbról kezdve.
+
+7253 2262 5312 0539
+Adja össze a számjegyeket
+
+7+2+5+3+2+2+6+2+5+3+1+2+0+5+3+9 = 57
+Az 57 nem osztható 10-zel, ezért ez a szám nem érvényes.

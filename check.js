@@ -10,17 +10,25 @@ module.exports = function check(kartyaszam){
     for (let i = 14; i>=0; i-=2) {
         let jegy = parseInt(kartyaszam[i])
         if(2*jegy>9){
-            jegy = jegy-9
+            jegy = 2*jegy-9
+            osszeg += jegy
         }
         else{
             osszeg += 2*jegy
         }
+        console.log(jegy)
     }
+    console.log(osszeg)
+    console.log("--------------------")
     for (let i = 1; i<=15; i+=2) {
         let jegy = parseInt(kartyaszam[i])
+        console.log(jegy)
         osszeg += jegy
     }
-    return osszeg
+
+    if(osszeg % 10 ===0){
+        return true
+    }
+    return false
     
 }
-
